@@ -14,4 +14,8 @@ public interface GameRepository extends JpaRepository<Game, Long> {
     @Query(value = "select * from game  where url=:url", nativeQuery = true)
     Game getByUrl(@Param("url") String url);
 //    Game findGameById(Long id);
+
+    @Query(value = "SELECT count(g.create_date) FROM game g \n" +
+            "WHERE to_char(g.create_date, 'MM/YYYY') = :time", nativeQuery = true)
+    Long getTimeCreateGame(@Param("time") String time);
 }

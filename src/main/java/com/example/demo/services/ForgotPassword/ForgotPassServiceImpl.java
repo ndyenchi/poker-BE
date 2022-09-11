@@ -42,7 +42,7 @@ public class ForgotPassServiceImpl implements  ForgotPassService {
                 + "Thanks,</p>"
                 + "<p>TPS Software</p>" ;
         helper.setTo(email.getEmailTo());
-        helper.setSubject("Tien minh");
+        helper.setSubject("Planning Poker");
         helper.setText(content, true);
 //        ClassPathResource pathResource=new ClassPathResource("download.jpeg");
 //        helper.addAttachment("download.jpeg",pathResource);

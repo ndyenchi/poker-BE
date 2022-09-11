@@ -23,9 +23,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api/planning-poker/games")
@@ -60,6 +58,8 @@ public class PokerController {
 
         Game game = new Game(joinGameResponse.getName(), generatedString);
 
+        Date today = Calendar.getInstance().getTime();
+        game.setCreateDate(today);
         gameRepository.save(game);
 
         //join game

@@ -1,5 +1,7 @@
 package com.example.demo.dto.pokerGame;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
 
 public class ExportCSV {
@@ -60,12 +62,11 @@ public class ExportCSV {
     public void setTitle(String title) {
         this.title = title;
     }
-//    public ExportCSV(String issue, Long average, Long playersVoted, Long playersTotal, Date time) {
-//        this.issue = issue;
+//    public ExportCSV(String issue, Long average, Long playersVoted, Long playersTotal) {
+//        this.key = issue;
 //        this.average = average;
 //        this.playersVoted = playersVoted;
 //        this.playersTotal = playersTotal;
-//        this.time = time;
 //    }
 
 

@@ -1,8 +1,11 @@
 package com.example.demo.model.pokerGame;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.Collection;
+import java.util.Date;
 
 @Entity
 @Table
@@ -15,6 +18,10 @@ public class Game {
     @Size(max = 50, message = "<50")
     private String name;
     private String url;
+
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "DD/MM/YYYY")
+    private Date createDate;
 
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "game")
@@ -56,5 +63,13 @@ public class Game {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 }
